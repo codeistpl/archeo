@@ -17,11 +17,15 @@ find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets)
 set(TS_FILES archeo_qt_en_US.ts)
 
 set(PROJECT_SOURCES
+        version.h
         main.cpp
         mainwindow.cpp
         mainwindow.h
         mainwindow.ui
-        version.h
+        about.cpp
+        about.h
+        about.ui
+        licence.h
         ${TS_FILES}
 )
 

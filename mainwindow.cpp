@@ -20,6 +20,7 @@
 #include "mainwindow.h"
 #include "./ui_mainwindow.h"
 #include <version.h>
+#include <iostream>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -32,5 +33,12 @@ MainWindow::MainWindow(QWidget *parent)
 MainWindow::~MainWindow()
 {
     delete ui;
+}
+
+void MainWindow::about()
+{
+    About dialog(this);
+    dialog.exec();
+    std::cout << "dialog" << std::endl;
 }
 

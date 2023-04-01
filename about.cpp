@@ -16,27 +16,25 @@
    You should have received a copy of the GNU General Public License
    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 */
+#include "about.h"
+#include "ui_about.h"
 
-#pragma once
+#include <QStringLiteral>
+#include <version.h>
+#include <licence.h>
 
-#include <QMainWindow>
-#include <about.h>
-
-QT_BEGIN_NAMESPACE
-namespace Ui { class MainWindow; }
-QT_END_NAMESPACE
-
-class MainWindow : public QMainWindow
+About::About(QWidget *parent) :
+    QDialog(parent),
+    ui(new Ui::About)
 {
-    Q_OBJECT
+    ui->setupUi(this);
+    ui->nameLabel->setText("\bArcheo\b");
+    ui->versionLabel->setText("v"+archeo::getVersion());
+    ui->buildLabel->setText("build: devel");
+    ui->copyrigthText->setText(archeo::license);
+}
 
-public:
-    MainWindow(QWidget *parent = nullptr);
-    ~MainWindow();
-
-private:
-    Ui::MainWindow *ui;
-
-public slots:
-    void about();
-};
+About::~About()
+{
+    delete ui;
+}

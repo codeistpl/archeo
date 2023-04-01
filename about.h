@@ -16,27 +16,23 @@
    You should have received a copy of the GNU General Public License
    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 */
-
 #pragma once
 
-#include <QMainWindow>
-#include <about.h>
+#include <QDialog>
 
-QT_BEGIN_NAMESPACE
-namespace Ui { class MainWindow; }
-QT_END_NAMESPACE
+namespace Ui {
+class About;
+}
 
-class MainWindow : public QMainWindow
+class About : public QDialog
 {
     Q_OBJECT
 
 public:
-    MainWindow(QWidget *parent = nullptr);
-    ~MainWindow();
+    explicit About(QWidget *parent = nullptr);
+    ~About();
 
 private:
-    Ui::MainWindow *ui;
-
-public slots:
-    void about();
+    Ui::About *ui;
 };
+

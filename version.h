@@ -35,7 +35,7 @@ struct  Version{
 // modify version here
 constexpr static Version version = {0,0,1};
 
-const QString getVersion() {
+static const QString getVersion() {
     return version.getVersion();
 }
 
