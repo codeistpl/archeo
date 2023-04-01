@@ -27,11 +27,12 @@ About::About(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::About)
 {
+    this->setWindowTitle("About");
     ui->setupUi(this);
     ui->nameLabel->setText("\bArcheo\b");
     ui->versionLabel->setText("v"+archeo::getVersion());
     ui->buildLabel->setText("build: devel");
-    ui->copyrigthText->setText(archeo::license);
+    ui->copyrigthText->setText(archeo::readLicense());
 }
 
 About::~About()

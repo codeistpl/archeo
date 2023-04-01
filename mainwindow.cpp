@@ -28,6 +28,7 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
     this->setWindowTitle("Archeo : v" + archeo::getVersion());
+    connect(this->ui->actionAbout, &QAction::triggered, this, &MainWindow::about);
 }
 
 MainWindow::~MainWindow()
@@ -39,6 +40,5 @@ void MainWindow::about()
 {
     About dialog(this);
     dialog.exec();
-    std::cout << "dialog" << std::endl;
 }
 

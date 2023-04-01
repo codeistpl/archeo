@@ -16,6 +16,8 @@ find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets)
 
 set(TS_FILES archeo_qt_en_US.ts)
 
+set(QRC_FILES main.qrc)
+
 set(PROJECT_SOURCES
         version.h
         main.cpp
@@ -27,7 +29,9 @@ set(PROJECT_SOURCES
         about.ui
         licence.h
         ${TS_FILES}
+        ${QRC_FILES}
 )
+
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
     qt_add_executable(archeo_qt
